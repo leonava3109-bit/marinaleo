@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#4691c8">
+<title>Para Marina 💟</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;font-family:Georgia,"Times New Roman",serif}
+  body{
+    min-height:100vh;display:flex;align-items:center;justify-content:center;
+    overflow:hidden;color:#205278;
+    background:linear-gradient(135deg,#dff3ff 0%,#f7fbff 48%,#d9ebfa 100%);
+  }
+  .spark{position:fixed;opacity:.45;font-size:22px;animation:float 4s ease-in-out infinite}
+  .s1{top:7%;left:9%}.s2{top:13%;right:10%;animation-delay:1s}
+  .s3{bottom:10%;left:12%;animation-delay:2s}.s4{bottom:17%;right:9%;animation-delay:3s}
+  @keyframes float{50%{transform:translateY(-9px) scale(1.1);opacity:.8}}
+  .app{
+    width:min(92vw,430px);height:min(90vh,720px);position:relative;
+    background:rgba(255,255,255,.92);border-radius:30px;
+    box-shadow:0 20px 55px rgba(39,93,130,.22);
+    overflow:hidden;display:flex;flex-direction:column;
+  }
+  .progress{height:5px;background:#4691c8;width:0;transition:width .45s ease}
+  .page{
+    flex:1;display:none;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:42px 30px 55px;animation:enter .45s ease;
+  }
+  .page.active{display:flex}
+  @keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .icon{font-size:70px;margin-bottom:18px;animation:heartbeat 1.7s ease-in-out infinite}
+  .heart{font-size:78px}
+  @keyframes heartbeat{50%{transform:scale(1.08)}}
+  h1,h2{color:#205278;margin:0 0 20px}
+  h1{font-size:32px}.page h2{font-size:27px}
+  p{font-size:19px;line-height:1.65;margin:0 0 26px}
+  .small{font-size:15px;opacity:.7}
+  button{
+    border:0;border-radius:999px;background:#4691c8;color:#fff;
+    padding:14px 22px;margin:6px;min-width:190px;font-size:17px;
+    font-family:inherit;cursor:pointer;box-shadow:0 7px 18px rgba(50,110,155,.2);
+    transition:transform .15s,filter .15s
+  }
+  button:active{transform:scale(.97)}
+  button:hover{filter:brightness(1.05)}
+  button.secondary{background:#e1f0fa;color:#285776;box-shadow:none}
+  .footer{position:absolute;bottom:16px;left:0;right:0;text-align:center;font:12px Arial,sans-serif;color:#4691c8}
+  .choice-row{display:flex;flex-wrap:wrap;justify-content:center}
+  .final-note{font-size:16px;color:#4691c8}
+</style>
+</head>
+<body>
+<div class="spark s1">✦</div><div class="spark s2">✧</div>
+<div class="spark s3">✦</div><div class="spark s4">✧</div>
+
+<main class="app">
+  <div class="progress" id="progress"></div>
+
+  <section class="page active">
+    <div class="icon">💙🌸</div>
+    <h1>MARINA 💟</h1>
+    <p>Si llegaste hasta aquí, significa que escaneaste el pequeño secreto que venía con tu flor.<br><br>
+    Así que… quédate un ratito.<br>Tengo algo que decirte.</p>
+    <button onclick="next()">Empezar ✨</button>
+    <div class="footer">1 / 8</div>
+  </section>
+
+  <section class="page">
+    <h2>Una casualidad bonita</h2>
+    <p>Nos conocimos hace poquito, pero a veces no hace falta mucho tiempo para que alguien empiece a importarte.</p>
+    <button onclick="next()">Siguiente →</button>
+    <div class="footer">2 / 8</div>
+  </section>
+
+  <section class="page">
+    <h2>Dos lugares 🌎</h2>
+    <p>Tú, romana. 🇮🇹<br>Yo, cubano. 🇨🇺<br><br>Dos lugares bastante diferentes…<br>y aun así terminamos encontrándonos.</p>
+    <button onclick="next()">Continúa 💙</button>
+    <div class="footer">3 / 8</div>
+  </section>
+
+  <section class="page">
+    <div class="icon heart">💟</div>
+    <h2>Nuestro corazón</h2>
+    <p>No sé exactamente cuándo pasó, pero este corazón ya tiene un significado especial para mí.</p>
+    <button onclick="next()">Pasa la página →</button>
+    <div class="footer">4 / 8</div>
+  </section>
+
+  <section class="page">
+    <h2>Lo que quería decirte</h2>
+    <p>Marina, desde que te conocí, hay momentos que se sienten un poquito más bonitos simplemente porque estás tú.<br><br>
+    Y aunque nos conocemos desde hace poco, me hacía ilusión preparar algo especial para ti.</p>
+    <button onclick="next()">Todavía falta una cosa…</button>
+    <div class="footer">5 / 8</div>
+  </section>
+
+  <section class="page">
+    <h2>Una pequeña pregunta</h2>
+    <p>¿Te ha gustado esta pequeña sorpresa? 💙</p>
+    <div class="choice-row">
+      <button onclick="next()">Sí 🥹</button>
+      <button class="secondary" onclick="next()">Muchísimo 💟</button>
+    </div>
+    <div class="footer">6 / 8</div>
+  </section>
+
+  <section class="page">
+    <h2>Ahora sí…</h2>
+    <p>Marina…<br><br>Después de todo esto, creo que ya no tiene sentido seguir escondiendo la pregunta.</p>
+    <button onclick="next()">¿Cuál? 👀</button>
+    <div class="footer">7 / 8</div>
+  </section>
+
+  <section class="page">
+    <div class="icon heart">💙</div>
+    <h1>¿Quieres ser mi novia? 💟</h1>
+    <p>No tienes que responder por presión ni por compromiso.<br>Solo quiero saber qué sientes tú.</p>
+    <div class="choice-row">
+      <button onclick="yes()">Sí 💙</button>
+      <button class="secondary" onclick="think()">Quiero pensarlo 🌸</button>
+    </div>
+    <div class="footer">8 / 8</div>
+  </section>
+
+  <section class="page" id="yes">
+    <div class="icon">🥹💙</div>
+    <h1>Entonces… 💟</h1>
+    <p>Me acabas de hacer muy feliz.</p>
+    <p class="final-note">Gracias por darme la oportunidad de seguir conociéndote y descubrir juntos qué viene después. ✨</p>
+  </section>
+
+  <section class="page" id="think">
+    <div class="icon">🌸</div>
+    <h2>Está bien 💙</h2>
+    <p>Tómate tu tiempo. Para mí también era importante que supieras lo que siento.</p>
+    <p class="final-note">Lo importante es que seas sincera conmigo.</p>
+  </section>
+</main>
+
+<script>
+const pages=[...document.querySelectorAll('.page')];
+const progress=document.getElementById('progress');
+let current=0;
+function show(i){
+  pages[current].classList.remove('active');
+  current=i;
+  pages[current].classList.add('active');
+  progress.style.width=Math.min((current/7)*100,100)+'%';
+}
+function next(){ if(current<7) show(current+1); }
+function yes(){ show(8); progress.style.width='100%'; }
+function think(){ show(9); progress.style.width='100%'; }
+</script>
+</body>
+</html>
